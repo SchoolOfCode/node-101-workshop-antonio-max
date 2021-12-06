@@ -16,21 +16,28 @@ let myCollection = [
   },
 ];
 
-
 let secondItem = myCollection[1];
 
-function describeItem() {
-  let name = secondItem.name;
-  let whatILike = secondItem.whatILike;
-  let count = 
+function describeItem(element) {
+  //Another way to do it (destructuring)
+  // let [name, whatIlike, count] = element;
+
+  let name = element.name;
+  let whatILike = element.whatILike;
+  let count = element.count;
+
   //Will return this console.log
-  console.log(`I have a ${name}. Here's what I like about it: ${whatILike}`);
+  if (count > 1) {
+    console.log(
+      `I have ${count} names. Here's what I like about them: ${whatILike}`
+    );
+  } else {
+    console.log(`I have a ${name}. Here's what I like about it: ${whatILike}`);
+  }
 }
-
-describeItem(secondItem);
-
 
 function describeCollection() {
-myCollection.map(describeItem)
-
+  myCollection.map(describeItem);
 }
+
+describeCollection();
