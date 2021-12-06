@@ -16,14 +16,21 @@ let myCollection = [
   },
 ];
 
+
 let secondItem = myCollection[1];
 
-function describeItem(secondItem) {
+function describeItem() {
   let name = secondItem.name;
   let whatILike = secondItem.whatILike;
-
+  let count = 
   //Will return this console.log
   console.log(`I have a ${name}. Here's what I like about it: ${whatILike}`);
 }
 
 describeItem(secondItem);
+
+
+function describeCollection() {
+myCollection.map(describeItem)
+
+}
